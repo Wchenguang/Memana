@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/wk1997/Documents/GitHub/Memana/Memana.h
+cstddef
+-
+cstdlib
+-
+iostream
+-
+
+/Users/wk1997/Documents/GitHub/Memana/main.cpp
+iostream
+-
+Memana.h
+/Users/wk1997/Documents/GitHub/Memana/Memana.h
+
