@@ -68,5 +68,31 @@ int main(){
     }
     MemAlloc<int>::Dellocate(gint, 4);
 
+    std::cout<<"**********************************************************"<<std::endl;
+
+     A*(*gPA) = MemAlloc<A*>::Allocate(4);
+    for(int i = 0; i < 4; ++i){
+        gPA[i] = MemAlloc<A>::Allocate();
+        MemAlloc<A>::Dellocate(gPA[i]);
+    }
+    MemAlloc<A*>::Dellocate(gPA, 4);
+
+    std::cout<<"**********************************************************"<<std::endl;
+
+    void*(*gvoid) = MemAlloc<void*>::Allocate(4);
+
+    for(int i = 0; i < 4; ++i){
+        gvoid[i] = (void*)MemAlloc<A>::Allocate();
+        MemAlloc<A>::Dellocate((A*)gvoid[i]);
+    }
+
+    MemAlloc<void*>::Dellocate(gvoid, 4);
+
+    std::cout<<"**********************************************************"<<std::endl;
+
+    A*(**gPPA) = MemAlloc<A**>::Allocate(4);
+
+    MemAlloc<A**>::Dellocate(gPPA, 4);
+
     return 0;
 }

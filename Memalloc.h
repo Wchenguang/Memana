@@ -40,6 +40,54 @@ public:
 };
 
 /*******************************************************************************************/
+//偏特化 指针 类型
+template <typename Type>
+class MemAlloc<Type*>{
+public:
+    typedef Type** pArrType;
+    //单个对象的申请
+    static Type**Allocate(){
+        return (Type**) __Wpool.allocate(sizeof(Type*));
+    }
+    //对象数组的申请
+    static pArrType Allocate(size_t num){
+        return (pArrType) __Wpool.allocate(sizeof(bool) * num);
+    }
+    //单个对象的销毁
+    static void Dellocate(Type **data){
+        __Wpool.dellocate(data, sizeof(Type*));
+    }
+    //对象数组的销毁
+    static void Dellocate(pArrType data, size_t num){
+        __Wpool.dellocate(data, sizeof(Type*) * num);
+    }
+};
+
+/*******************************************************************************************/
+//偏特化 指针 类型
+template <>
+class MemAlloc<void*>{
+public:
+    typedef void** pArrType;
+    //单个对象的申请
+    static void**Allocate(){
+        return (void**) __Wpool.allocate(sizeof(void*));
+    }
+    //对象数组的申请
+    static pArrType Allocate(size_t num){
+        return (pArrType) __Wpool.allocate(sizeof(bool) * num);
+    }
+    //单个对象的销毁
+    static void Dellocate(void **data){
+        __Wpool.dellocate(data, sizeof(void*));
+    }
+    //对象数组的销毁
+    static void Dellocate(pArrType data, size_t num){
+        __Wpool.dellocate(data, sizeof(void*) * num);
+    }
+};
+
+/*******************************************************************************************/
 //偏特化 bool 类型
 template <>
 class MemAlloc<bool>{
