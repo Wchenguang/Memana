@@ -164,7 +164,7 @@ public:
         }
     }
 
-    //销毁有问题
+    //销毁
     virtual ~Memana(){
         for(int i = 0; i < BLOCK_LIST_SIZE; ++i){
             Block *block = blocklist[i];
