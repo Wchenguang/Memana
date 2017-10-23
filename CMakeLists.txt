@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES
         main.cpp
         Memana.h
-        BasePool.h
+        Memana.cpp
+        Memalloc.h
         )
 
 add_executable(Memana ${SOURCE_FILES})

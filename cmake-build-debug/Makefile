@@ -123,6 +123,33 @@ Memana/fast:
 	$(MAKE) -f CMakeFiles/Memana.dir/build.make CMakeFiles/Memana.dir/build
 .PHONY : Memana/fast
 
+Memana.o: Memana.cpp.o
+
+.PHONY : Memana.o
+
+# target to build an object file
+Memana.cpp.o:
+	$(MAKE) -f CMakeFiles/Memana.dir/build.make CMakeFiles/Memana.dir/Memana.cpp.o
+.PHONY : Memana.cpp.o
+
+Memana.i: Memana.cpp.i
+
+.PHONY : Memana.i
+
+# target to preprocess a source file
+Memana.cpp.i:
+	$(MAKE) -f CMakeFiles/Memana.dir/build.make CMakeFiles/Memana.dir/Memana.cpp.i
+.PHONY : Memana.cpp.i
+
+Memana.s: Memana.cpp.s
+
+.PHONY : Memana.s
+
+# target to generate assembly for a file
+Memana.cpp.s:
+	$(MAKE) -f CMakeFiles/Memana.dir/build.make CMakeFiles/Memana.dir/Memana.cpp.s
+.PHONY : Memana.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Memana"
+	@echo "... Memana.o"
+	@echo "... Memana.i"
+	@echo "... Memana.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

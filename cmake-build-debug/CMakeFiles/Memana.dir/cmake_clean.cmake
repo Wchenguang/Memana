@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Memana.dir/main.cpp.o"
+  "CMakeFiles/Memana.dir/Memana.cpp.o"
   "Memana.pdb"
   "Memana"
 )

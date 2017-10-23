@@ -1,70 +1,72 @@
 #include <iostream>
-#include "Memana.h"
 
-
-Memana allocator;
+#include "Memalloc.h"
 
 class A{
 public:
-    char *b;
+     int b;
 
     A(){
+        b = 0;
         std::cout<<"construct"<<std::endl;
-        b = (char *)allocator.allocate(10);
     }
     virtual ~A() {
         std::cout<<"destruct"<<std::endl;
-        if(b)
-            allocator.dellocate(b, 10);
     }
     void *operator new(size_t size){
         std::cout<<"allocate"<<std::endl;
-        return allocator.allocate(size);
     }
 
     void operator delete(void *p){
         std::cout<<"dellocate"<<std::endl;
-        allocator.dellocate(p, sizeof(A));
     }
 };
 
 int main(){
 
+    /*
+     * 内存池 不可拷贝 不可构造
+     * Memana m1;
+     * Memana m2 = __Wpool;
+     */
 
-    char *str = (char*)allocator.allocate(10);
-    memset(str,0,10);
-    strcpy(str, "hello");
+    A *gclass = MemAlloc<A>::Allocate(4);
+    for(int i = 0; i < 4; ++i){
+        std::cout<<gclass[i].b<<std::endl;
+    }
+    MemAlloc<A>::Dellocate(gclass, 4);
 
-    allocator.dellocate(str, 10);
+    std::cout<<"**********************************************************"<<std::endl;
 
-    str = (char*)allocator.allocate(10);
-    memset(str,0,10);
-    strcpy(str, "hello");
+    bool *gbool = MemAlloc<bool >::Allocate(4);
+    for(int i = 0; i < 4; ++i){
+        std::cout<<(int)gbool[i]<<std::endl;
+    }
+    MemAlloc<bool >::Dellocate(gbool, 4);
 
-    allocator.dellocate(str, 10);
+    std::cout<<"**********************************************************"<<std::endl;
 
-    str = (char*)allocator.allocate(10);
-    memset(str,0,10);
-    strcpy(str, "hello");
+    char *gchar = MemAlloc<char >::Allocate(4);
+    for(int i = 0; i < 4; ++i){
+        std::cout<<gchar[i]<<std::endl;
+    }
+    MemAlloc<char>::Dellocate(gchar, 4);
 
-    allocator.dellocate(str, 10);
+    std::cout<<"**********************************************************"<<std::endl;
 
-    std::cout<<str<<std::endl;
-/*******************************/
+    wchar_t *gwchar = MemAlloc<wchar_t >::Allocate(4);
+    for(int i = 0; i < 4; ++i){
+        std::cout<<gwchar[i]<<std::endl;
+    }
+    MemAlloc<wchar_t>::Dellocate(gwchar, 4);
 
-    //类的构造函数无法运行
-    //STL 用萃取技术 型别
-    //可以标志指定
+    std::cout<<"**********************************************************"<<std::endl;
 
-    //分配内存
-    A *a = (A*)A::operator new(sizeof(A));
-    //构造函数
-    ::new(a) A();
-
-    a->~A();
-
-    //释放内存
-    A::operator delete(a);
+    int *gint = MemAlloc<int >::Allocate(4);
+    for(int i = 0; i < 4; ++i){
+        std::cout<<gint[i]<<std::endl;
+    }
+    MemAlloc<int>::Dellocate(gint, 4);
 
     return 0;
 }

@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+/Users/wk1997/Documents/GitHub/Memana/Memalloc.h
+Memana.h
+/Users/wk1997/Documents/GitHub/Memana/Memana.h
+iostream
+-
+
+/Users/wk1997/Documents/GitHub/Memana/Memana.cpp
+Memana.h
+/Users/wk1997/Documents/GitHub/Memana/Memana.h
+
 /Users/wk1997/Documents/GitHub/Memana/Memana.h
 cstddef
 -
@@ -17,6 +27,6 @@ iostream
 /Users/wk1997/Documents/GitHub/Memana/main.cpp
 iostream
 -
-Memana.h
-/Users/wk1997/Documents/GitHub/Memana/Memana.h
+Memalloc.h
+/Users/wk1997/Documents/GitHub/Memana/Memalloc.h
 

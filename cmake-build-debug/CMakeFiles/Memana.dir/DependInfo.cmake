@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/wk1997/Documents/GitHub/Memana/Memana.cpp" "/Users/wk1997/Documents/GitHub/Memana/cmake-build-debug/CMakeFiles/Memana.dir/Memana.cpp.o"
   "/Users/wk1997/Documents/GitHub/Memana/main.cpp" "/Users/wk1997/Documents/GitHub/Memana/cmake-build-debug/CMakeFiles/Memana.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
