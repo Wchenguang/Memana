@@ -60,6 +60,10 @@ public:
 
     //初始化内存块链表
     Memana(size_t initNum = ALIGN){
+
+        for(int index = 0;  index < BLOCK_LIST_SIZE; ++index)
+            blocklist[index] = NULL;
+
         resHead = (char*)malloc(initNum);
         if(NULL == resHead){
             std::cerr<<"can not Initialize";
@@ -74,7 +78,7 @@ public:
     }
 
     //当 一个内存块表 为空 重新充满
-    void refillTargetBlocks(size_t index, size_t num = 20){
+    void refillTargetBlocks(size_t index, size_t num = 1){
         size_t blockSize = (index + 1) * ALIGN;
         char *data = getBlocksFromPool(blockSize, num);
         for(int i = 0; i < num; ++i){
@@ -138,7 +142,7 @@ public:
     }
 
     //分配内存
-    void *allovate(size_t size){
+    void *allocate(size_t size){
         if(size > MAX_BYTES)
             return malloc(size);
         else{
@@ -150,13 +154,19 @@ public:
     }
 
     //回收内存 只回收到链表中 否则不连续
-    void dellocate(){
-
+    void dellocate(void *data, size_t size){
+        if(size > MAX_BYTES)
+            free(data);
+        else{
+            size_t blockSize = RoundUp(size);
+            size_t index = getIndexInList(blockSize);
+            appendBlock(index, data);
+        }
     }
 
     //销毁有问题
     virtual ~Memana(){
-        /*for(int i = 0; i < BLOCK_LIST_SIZE; ++i){
+        for(int i = 0; i < BLOCK_LIST_SIZE; ++i){
             Block *block = blocklist[i];
             while (block){
                 Block *temp = block->next;
@@ -165,7 +175,7 @@ public:
             }
         }
 
-        delete resHead;*/
+        delete resHead;
     }
 };
 
