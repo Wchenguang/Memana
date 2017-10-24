@@ -6,7 +6,6 @@
 #include <cstdlib>
 #include <iostream>
 
-typedef short LIMIT_TYPE;
 
 //内存块封装
 class Block{
@@ -26,7 +25,7 @@ private:
         MAX_BYTES = 128,                                        //大于MAX以 malloc 分配
         MINI_BYTES = 8,
         ALIGN = 8,                                              //粒度
-        BLOCK_LIST_SIZE = (MAX_BYTES - MINI_BYTES + 1)/ALIGN,   //block 链表长度
+        BLOCK_LIST_SIZE = (MAX_BYTES - MINI_BYTES)/ALIGN + 1,   //block 链表长度
     };
 
     //左闭右开 tail不可访问
@@ -58,13 +57,15 @@ private:
     //获取 相应适合大小的内存块
     Block *getBlock(size_t size);
 
-    //初始化内存块链表
-    explicit Memana(size_t initNum = ALIGN);
+
 
     //不可拷贝
     Memana(const Memana &m);
 
 public:
+
+    //初始化内存块链表
+    explicit Memana(size_t initNum = ALIGN);
 
     static Memana *self;
     //单例模式
@@ -82,7 +83,20 @@ public:
 
 };
 
-extern Memana &__Wpool;
+//尝试单例模式下的显式调用析构函数
+class MemPool{
+public:
+    static Memana *m;
+    MemPool(){
+        m = Memana::GetInstance();
+    }
+    ~MemPool(){
+        if(m)
+            m->~Memana();
+    }
+};
+
+extern Memana __Wpool;
 
 #endif
 

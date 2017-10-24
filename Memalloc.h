@@ -4,7 +4,6 @@
 
 #include <iostream>
 
-
 //默认为 类 类型
 template <typename Type>
 class MemAlloc{

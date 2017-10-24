@@ -1,7 +1,11 @@
 #include "Memana.h"
 
-Memana *__pWpool = Memana::GetInstance();
-Memana &__Wpool = *__pWpool;
+#include <cstdio>
+
+//Memana *__pWpool = Memana::GetInstance();
+Memana __Wpool;
+
+
 
 Block::Block() : res(NULL), next(NULL) {};
 
@@ -67,13 +71,14 @@ char *Memana::getBlocksFromPool(size_t blockSize, size_t &blockNum){
             float multi = 2.0;
             char *res = NULL;
             while (!res && (multi - 1/8) > 0.0000001){
-                res = (char*)malloc(expectSum * (1 + multi));
+                res = (char*)malloc(expectSum * multi);
                 multi /= 2;
             }
             if(res){
                 resHead = res;
-                leftBytes = expectSum * (1 + multi * 2);
+                leftBytes = expectSum * multi * 2;
                 resTail = resHead + leftBytes;
+
             }else{
                 std::cerr<<"allocate from system err";
                 exit(-1);
@@ -115,25 +120,33 @@ Block *Memana::getBlock(size_t size){
 //初始化内存块链表
 Memana::Memana(size_t initNum){
 
+    std::cerr<<"MEMANA CONSTRUCT"<<std::endl;
+
     for(int index = 0;  index < BLOCK_LIST_SIZE; ++index)
-    blocklist[index] = NULL;
+        blocklist[index] = NULL;
 
     resHead = (char*)malloc(initNum);
     if(NULL == resHead){
-    std::cerr<<"can not Initialize";
-    exit(-1);
+        std::cerr<<"can not Initialize";
+        exit(-1);
     }else{
-    resTail = resHead + initNum;
+        resTail = resHead + initNum;
     }
 
     for(int index = 0; index < BLOCK_LIST_SIZE; ++index){
-    refillTargetBlocks(index);
+        refillTargetBlocks(index);
     }
+
+
 }
 
+//解决池扩充后 原内存池无法销毁----------------------------------------------------》》》》》》》》》》》》》》》
 //销毁
 Memana::~Memana(){
-    for(int i = 0; i < BLOCK_LIST_SIZE; ++i){
+
+    std::cerr<<"MEMANA DESTRUCT leave it to system"<<std::endl;
+
+    /*for(int i = 0; i < BLOCK_LIST_SIZE; ++i){
         Block *block = blocklist[i];
         while (block){
             Block *temp = block->next;
@@ -142,7 +155,7 @@ Memana::~Memana(){
         }
     }
 
-    delete resHead;
+    free(resHead);*/
 }
 
 //分配内存
