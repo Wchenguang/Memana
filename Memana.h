@@ -63,10 +63,15 @@ private:
     //初始化内存块链表
     explicit Memana(size_t initNum = ALIGN);
 
-    //不可拷贝
-    Memana(const Memana &m);
+
 
 public:
+
+    //不可拷贝
+    Memana(const Memana &m) = delete;
+
+    //不可赋值
+    Memana &operator =(const Memana &m) = delete;
 
     //单例模式
     static Memana * GetInstance();
