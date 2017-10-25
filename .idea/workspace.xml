@@ -12,14 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dbe4b3a-6add-4bfe-bf1b-19820b9dacd8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Memana.dir/Memana.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Memana.dir/Memana.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Memana.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Memana.dir/main.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/Memana" afterPath="$PROJECT_DIR$/cmake-build-debug/Memana" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memalloc.h" afterPath="$PROJECT_DIR$/Memalloc.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memana.cpp" afterPath="$PROJECT_DIR$/Memana.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Memana.h" afterPath="$PROJECT_DIR$/Memana.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Memana.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Memana.dir/CXX.includecache" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +39,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="88" column="41" lean-forward="true" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+            <state relative-caret-position="1320">
+              <caret line="88" column="41" lean-forward="false" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -56,8 +51,8 @@
       <file leaf-file-name="Memana.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Memana.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+            <state relative-caret-position="103">
+              <caret line="74" column="22" lean-forward="false" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
               <folding>
                 <element signature="e#38#56#0" expanded="true" />
               </folding>
@@ -68,7 +63,7 @@
       <file leaf-file-name="Memalloc.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Memalloc.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-676">
+            <state relative-caret-position="-834">
               <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
                 <element signature="e#40#59#0" expanded="true" />
@@ -114,8 +109,8 @@
       <file leaf-file-name="Memana.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Memana.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="98" column="10" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+            <state relative-caret-position="1875">
+              <caret line="125" column="26" lean-forward="false" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -133,6 +128,7 @@
       <find>fuck</find>
       <find>delete</find>
       <find>malloc</find>
+      <find>GetInstance</find>
     </findStrings>
     <replaceStrings>
       <replace>int</replace>
@@ -154,9 +150,9 @@
         <option value="$PROJECT_DIR$/Memalloc.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/Memalloc.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/Memana.h" />
         <option value="$PROJECT_DIR$/Memana.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -241,11 +237,13 @@
       <workItem from="1508802817171" duration="3344000" />
       <workItem from="1508807203560" duration="8000" />
       <workItem from="1508819779092" duration="257000" />
+      <workItem from="1508852194330" duration="2000" />
+      <workItem from="1508919825378" duration="246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31092000" />
+    <option name="totallyTimeSpent" value="31340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -279,12 +277,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Memana.cpp</url>
-          <line>127</line>
+          <line>125</line>
           <option name="timeStamp" value="79" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Memana.cpp</url>
-          <line>128</line>
+          <line>126</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
@@ -293,6 +291,80 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Memana.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+          <folding>
+            <element signature="e#38#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Memalloc.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#59#0" expanded="true" />
+            <element signature="e#102#117#0" expanded="true" />
+            <element signature="e#118#922#1" expanded="false" />
+            <element signature="e#1040#1055#0" expanded="true" />
+            <element signature="e#1056#1585#1" expanded="false" />
+            <element signature="e#1703#1705#0" expanded="true" />
+            <element signature="e#1706#2235#1" expanded="false" />
+            <element signature="e#2355#2357#0" expanded="true" />
+            <element signature="e#2358#2841#1" expanded="false" />
+            <element signature="e#2961#2963#0" expanded="true" />
+            <element signature="e#2964#3447#1" expanded="false" />
+            <element signature="e#3574#3576#0" expanded="true" />
+            <element signature="e#3577#4137#1" expanded="false" />
+            <element signature="e#4266#4268#0" expanded="true" />
+            <element signature="e#4269#4851#1" expanded="false" />
+            <element signature="e#4974#4976#0" expanded="true" />
+            <element signature="e#4977#5493#1" expanded="false" />
+            <element signature="e#5614#5616#0" expanded="true" />
+            <element signature="e#5617#6111#1" expanded="false" />
+            <element signature="e#6241#6243#0" expanded="true" />
+            <element signature="e#6244#6837#1" expanded="false" />
+            <element signature="e#6965#6967#0" expanded="true" />
+            <element signature="e#6968#7539#1" expanded="false" />
+            <element signature="e#7658#7660#0" expanded="true" />
+            <element signature="e#7661#8133#1" expanded="false" />
+            <element signature="e#8253#8255#0" expanded="true" />
+            <element signature="e#8256#8739#1" expanded="false" />
+            <element signature="e#8868#8870#0" expanded="true" />
+            <element signature="e#8871#9453#1" expanded="false" />
+            <element signature="e#9574#9576#0" expanded="true" />
+            <element signature="e#9577#10071#1" expanded="false" />
+            <element signature="e#10193#10195#0" expanded="true" />
+            <element signature="e#10196#10701#1" expanded="false" />
+            <element signature="e#10828#10830#0" expanded="true" />
+            <element signature="e#10831#11391#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Memana.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="98" column="10" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="88" column="41" lean-forward="true" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -880,9 +952,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Memana.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="125" column="26" lean-forward="false" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Memalloc.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-676">
+        <state relative-caret-position="-834">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
             <element signature="e#40#59#0" expanded="true" />
@@ -926,28 +1008,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Memana.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+        <state relative-caret-position="103">
+          <caret line="74" column="22" lean-forward="false" selection-start-line="74" selection-start-column="22" selection-end-line="74" selection-end-column="22" />
           <folding>
             <element signature="e#38#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Memana.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="98" column="10" lean-forward="true" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="88" column="41" lean-forward="true" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
+        <state relative-caret-position="1320">
+          <caret line="88" column="41" lean-forward="false" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

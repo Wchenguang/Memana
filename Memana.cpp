@@ -2,8 +2,8 @@
 
 #include <cstdio>
 
-//Memana *__pWpool = Memana::GetInstance();
-Memana __Wpool;
+Memana *__pWpool = Memana::GetInstance();
+Memana &__Wpool = *__pWpool;
 
 
 
@@ -120,8 +120,6 @@ Block *Memana::getBlock(size_t size){
 //初始化内存块链表
 Memana::Memana(size_t initNum){
 
-    std::cerr<<"MEMANA CONSTRUCT"<<std::endl;
-
     for(int index = 0;  index < BLOCK_LIST_SIZE; ++index)
         blocklist[index] = NULL;
 
@@ -140,22 +138,9 @@ Memana::Memana(size_t initNum){
 
 }
 
-//解决池扩充后 原内存池无法销毁----------------------------------------------------》》》》》》》》》》》》》》》
 //销毁
 Memana::~Memana(){
 
-    std::cerr<<"MEMANA DESTRUCT leave it to system"<<std::endl;
-
-    /*for(int i = 0; i < BLOCK_LIST_SIZE; ++i){
-        Block *block = blocklist[i];
-        while (block){
-            Block *temp = block->next;
-            delete block;
-            block = temp;
-        }
-    }
-
-    free(resHead);*/
 }
 
 //分配内存

@@ -57,17 +57,17 @@ private:
     //获取 相应适合大小的内存块
     Block *getBlock(size_t size);
 
+    static Memana *self;
 
+
+    //初始化内存块链表
+    explicit Memana(size_t initNum = ALIGN);
 
     //不可拷贝
     Memana(const Memana &m);
 
 public:
 
-    //初始化内存块链表
-    explicit Memana(size_t initNum = ALIGN);
-
-    static Memana *self;
     //单例模式
     static Memana * GetInstance();
 
@@ -84,7 +84,7 @@ public:
 };
 
 //尝试单例模式下的显式调用析构函数
-class MemPool{
+/*class MemPool{
 public:
     static Memana *m;
     MemPool(){
@@ -94,9 +94,9 @@ public:
         if(m)
             m->~Memana();
     }
-};
+};*/
 
-extern Memana __Wpool;
+extern Memana &__Wpool;
 
 #endif
 
